@@ -1,0 +1,110 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomfolio | Portfolio Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="#" class="logo">Bloomfolio<span>.</span></a>
+        <p>Create something that represents you.</p>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <p class="eyebrow">YOUR CAREER, YOUR STORY</p>
+            <h1>Your talent deserves<br>a <span>beautiful portfolio.</span></h1>
+            <p>Tell us about yourself, add your projects, and create a portfolio you can share with the world.</p>
+        </section>
+
+        <section class="builder">
+            <div class="form-panel">
+                <h2>Build your portfolio ✨</h2>
+                <p class="muted">Fill in your details below.</p>
+
+                <form id="portfolio-form">
+                    <label for="fullName">Your name</label>
+                    <input type="text" id="fullName" placeholder="e.g. Deborah Msoni" required>
+
+                    <label for="jobTitle">Professional title</label>
+                    <input type="text" id="jobTitle" placeholder="e.g. Web Developer" required>
+
+                    <label for="bio">About you</label>
+                    <textarea id="bio" rows="4" placeholder="Tell visitors a little about yourself..." required></textarea>
+
+                    <label for="skills">Your skills</label>
+                    <input type="text" id="skills" placeholder="e.g. HTML, CSS, JavaScript">
+
+                    <label for="projectName">Featured project</label>
+                    <input type="text" id="projectName" placeholder="Your project name">
+
+                    <label for="projectDescription">Project description</label>
+                    <textarea id="projectDescription" rows="3" placeholder="What did you create?"></textarea>
+
+                    <label for="email">Contact email</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+
+                    <label for="github">GitHub profile link</label>
+                    <input type="url" id="github" placeholder="https://github.com/yourusername">
+
+                    <button type="submit" class="primary-button">Generate my portfolio ✨</button>
+                </form>
+            </div>
+
+            <div class="preview-panel">
+                <div class="preview-heading">
+                    <div>
+                        <p class="eyebrow">LIVE PREVIEW</p>
+                        <h2>Your portfolio</h2>
+                    </div>
+                    <span class="preview-dot">● Preview</span>
+                </div>
+
+                <div class="portfolio-card" id="portfolio-preview">
+                    <div class="avatar" id="preview-avatar">Y</div>
+                    <p class="eyebrow">HELLO, WORLD!</p>
+                    <h2 id="preview-name">Your Name</h2>
+                    <h3 id="preview-title">Your professional title</h3>
+                    <p id="preview-bio">Your introduction will appear here. Complete the form to tell your story.</p>
+
+                    <div class="preview-section">
+                        <h3>Skills</h3>
+                        <div id="preview-skills" class="skill-list">
+                            <span>Your skills will appear here</span>
+                        </div>
+                    </div>
+
+                    <div class="preview-section">
+                        <h3>Featured Project</h3>
+                        <h4 id="preview-project">Your project name</h4>
+                        <p id="preview-project-description">Describe a project you are proud of.</p>
+                    </div>
+
+                    <div class="preview-contact">
+                        <a id="preview-email" href="#">Contact me</a>
+                        <a id="preview-github" href="#" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    </div>
+                </div>
+
+                <button type="button" id="download-button" class="secondary-button" disabled>
+                    Download my portfolio ↓
+                </button>
+
+                <p class="small-note">Generate your portfolio first, then download your personal website.</p>
+                <p id="status-message" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Made with care and a little creativity 🌷 · <span id="year"></span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

@@ -1,0 +1,510 @@
+```css
+/* ==========================================
+   BLOOMFOLIO — LAVENDER DREAM DESIGN
+========================================== */
+
+:root {
+    --lavender: #b69af8;
+    --lavender-dark: #7046c6;
+    --lavender-light: #e8dcff;
+    --lavender-pale: #f3edff;
+    --purple-deep: #50318c;
+    --pink: #f2a2d0;
+    --white: #ffffff;
+    --text: #302344;
+    --muted: #796b8e;
+    --border: #ded0fa;
+    --shadow: 0 12px 35px rgba(80, 49, 140, 0.14);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #c9b2ff;
+    background-image: linear-gradient(
+        135deg,
+        #c9b2ff 0%,
+        #bba0fa 45%,
+        #d9c8ff 100%
+    );
+    background-attachment: fixed;
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 2px solid var(--lavender-light);
+}
+
+.logo {
+    color: var(--purple-deep);
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.site-header p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    position: relative;
+}
+
+/* WELCOME SECTION */
+
+.welcome {
+    position: relative;
+    text-align: center;
+    padding: 75px 15px 55px;
+}
+
+/* THE CUTE DECORATIVE FLOWER */
+
+.welcome::before {
+    content: "🌸";
+    position: absolute;
+    top: 30px;
+    left: 3%;
+    font-size: 4.5rem;
+    transform: rotate(-15deg);
+    filter: drop-shadow(0 8px 8px rgba(80, 49, 140, 0.15));
+    animation: flower-float 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.welcome::after {
+    content: "✿";
+    position: absolute;
+    right: 5%;
+    bottom: 25px;
+    font-size: 3rem;
+    color: #fff0fa;
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+@keyframes flower-float {
+    0%, 100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+}
+
+.eyebrow {
+    color: var(--purple-deep);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.welcome h1 {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.welcome h1 span {
+    color: var(--purple-deep);
+}
+
+.welcome > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #493760;
+    font-size: 1rem;
+}
+
+/* BUILDER LAYOUT */
+
+.builder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+    padding-bottom: 70px;
+}
+
+.form-panel,
+.preview-panel {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.form-panel h2,
+.preview-heading h2 {
+    font-size: 1.5rem;
+    color: var(--purple-deep);
+}
+
+.muted,
+.small-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.form-panel > .muted {
+    margin-bottom: 22px;
+}
+
+/* FORM */
+
+#portfolio-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 17px 0 7px;
+    color: var(--text);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--lavender-pale);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--lavender-dark);
+    box-shadow: 0 0 0 4px rgba(182, 154, 248, 0.25);
+    background: var(--white);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a096b0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* BUTTONS */
+
+button {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.primary-button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 25px;
+    color: var(--white);
+    background: var(--purple-deep);
+    box-shadow: 0 7px 18px rgba(80, 49, 140, 0.2);
+}
+
+.primary-button:hover {
+    background: var(--lavender-dark);
+}
+
+.secondary-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    color: var(--purple-deep);
+    background: var(--lavender-light);
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover:not(:disabled) {
+    background: #dccbff;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* PREVIEW */
+
+.preview-panel {
+    background: var(--lavender-pale);
+}
+
+.preview-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.preview-dot {
+    color: #397b57;
+    background: #e2f7e9;
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.portfolio-card {
+    background: var(--white);
+    padding: 30px 25px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow-wrap: anywhere;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 22px;
+    border-radius: 23px;
+    background: var(--lavender-light);
+    color: var(--purple-deep);
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.portfolio-card h2 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.portfolio-card > h3 {
+    color: var(--lavender-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.portfolio-card > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 0.93rem;
+}
+
+.preview-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.preview-section h3 {
+    color: var(--purple-deep);
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.preview-section h4 {
+    margin-bottom: 7px;
+    color: var(--text);
+}
+
+.preview-section p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* SKILL TAGS */
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-list span {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: var(--lavender-light);
+    color: var(--purple-deep);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* CONTACT LINKS */
+
+.preview-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.preview-contact a {
+    color: var(--purple-deep);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.preview-contact a:hover {
+    color: var(--lavender-dark);
+    text-decoration: underline;
+}
+
+/* STATUS */
+
+.small-note {
+    text-align: center;
+    margin-top: 12px;
+}
+
+#status-message {
+    color: var(--purple-deep);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 2px solid var(--lavender-light);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* TABLETS */
+
+@media (max-width: 800px) {
+    .builder {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        padding-top: 65px;
+    }
+
+    .welcome::before {
+        left: 0;
+        top: 15px;
+        font-size: 3rem;
+    }
+
+    .site-header {
+        padding: 18px 5%;
+    }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 480px) {
+    .container {
+        width: 94%;
+    }
+
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .welcome {
+        padding: 45px 5px 35px;
+    }
+
+    .welcome::before {
+        left: 0;
+        top: 0;
+        font-size: 2.4rem;
+    }
+
+    .welcome::after {
+        right: 0;
+        bottom: 0;
+        font-size: 2rem;
+    }
+
+    .welcome h1 {
+        letter-spacing: -1px;
+    }
+
+    .form-panel,
+    .preview-panel {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .preview-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .portfolio-card {
+        padding: 23px 18px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+```
